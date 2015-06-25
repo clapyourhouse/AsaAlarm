@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8B11387C-0A42-479C-B6F9-690520F08A0C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>collectionViewCompleted</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>483765A21BFD67C1BADE6384769117A00B71EF7C</key>
+		<string>https://github.com/clapyourhouse/AsaAlarm.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>collectionViewCompleted.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>483765A21BFD67C1BADE6384769117A00B71EF7C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/clapyourhouse/AsaAlarm.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>483765A21BFD67C1BADE6384769117A00B71EF7C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>483765A21BFD67C1BADE6384769117A00B71EF7C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>collectionViewCompleted</string>
+		</dict>
+	</array>
+</dict>
+</plist>

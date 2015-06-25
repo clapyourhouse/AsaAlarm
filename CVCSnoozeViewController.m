@@ -36,13 +36,6 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    if (![self.navigationController.viewControllers containsObject:self]) {
-        //戻るを押された
-        NSLog(@"back");
-        CVCEditViewController *editView = [[CVCEditViewController alloc]init];
-        editView.snoozeString = @"Label";
-    }
-    
     [super viewWillDisappear:animated];
 }
 
@@ -74,7 +67,7 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 4;
+    return 6;
 }
 /**
  * セルの高さ
@@ -116,11 +109,20 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     // セルのアクセサリにチェックマークを指定
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    
+    NSLog(@"何番目？:%ld",(long)indexPath.row);
+    // NSUserDefaultsに保存・更新する
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     if (indexPath.row == 0) {
-        
     }else if (indexPath.row == 1) {
+    }else if (indexPath.row == 2) {
+    }else if (indexPath.row == 3) {
+    }else if (indexPath.row == 4) {
+        [ud setInteger:9 forKey:@"KEY_I"];
+    }else if (indexPath.row == 5) {
+        [ud setInteger:15 forKey:@"KEY_I"];
     }
+    [ud synchronize];
+
 }
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     

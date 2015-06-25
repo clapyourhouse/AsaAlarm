@@ -12,7 +12,7 @@
 //音も含め想定通りの動きをすること
 //複数localnotificaionが登録できる事。http://xcodeprogirl.hatenablog.com/entry/2013/12/20/151102
 //長押し時menuがでること
-//チェックや押された情報を前の画面に送ること
+//cellごとに個別のデータを持ちたい場合の構造。クリアする？
 #import "CVCEditViewController.h"
 #import "CVCSoundViewController.h"
 #import "CVCViewController.h"
@@ -25,6 +25,7 @@
 
 @interface CVCEditViewController (){
     UITableViewCell *cell;
+    NSUserDefaults *ud;
 }
 
 @end
@@ -151,21 +152,28 @@
                 initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     CVCTableViewCell *customCell = (CVCTableViewCell *) cell;
-    NSString *label;
+    NSString *sublabel;
+    NSString *mainLabel;
+    ud = [NSUserDefaults standardUserDefaults];
     if (indexPath.row == 0) {
-        label = @"サウンド";
+        sublabel = @"サウンド";
     }else if(indexPath.row == 1){
-        label = @"タイトル";
+        sublabel = @"タイトル";
+        mainLabel = [ud stringForKey:@"KEY_S"];
+        if (mainLabel) {
+            customCell.setLbl.text = mainLabel;
+        }
     }else if (indexPath.row == 2){
-        label = @"繰り返し";
+        sublabel = @"繰り返し";
     }else if (indexPath.row == 3){
-        label = @"スヌーズ";
+        sublabel = @"スヌーズ";
+        NSInteger v = [ud integerForKey:@"KEY_I"];
+        NSString *m = [NSString stringWithFormat:@"%ld",(long)v];
+        customCell.setLbl.text = [NSString stringWithFormat:@"%@分", m];
     }
-    NSLog(@"snooze:%@",_snoozeString);
-    customCell.titileLbl.text = [NSString stringWithFormat:@"%@", label];
-    if ([_snoozeString isEqualToString:@"Label"]) {
-        customCell.setLbl.text = [NSString stringWithFormat:@"%@",_snoozeString];
-    }
+    customCell.titileLbl.text = [NSString stringWithFormat:@"%@", sublabel];
+
+    
     return cell;
     
 }
@@ -211,10 +219,11 @@
     
     if (buttonIndex==1) {
         NSLog(@"text=%@",[[alertView textFieldAtIndex:0] text]);
-//        NSLog(@"text=%@",[[alertView textFieldAtIndex:1] text]);
-//        CVCTableViewCell *customCell = [[CVCTableViewCell alloc]init];
-//        customCell.setLbl.text = [[alertView textFieldAtIndex:0] text];
-//        [self.tableView reloadData];
+        NSString *alarmTitle = [[alertView textFieldAtIndex:0] text];
+        ud = [NSUserDefaults standardUserDefaults];
+        [ud setObject:alarmTitle forKey:@"KEY_S"];
+
+        [self.tableView reloadData];
     }
 }
 

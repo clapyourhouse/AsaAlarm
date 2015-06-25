@@ -61,7 +61,7 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 4;
+    return 9;
 }
 /**
  * セルの高さ
@@ -90,7 +90,13 @@
         label = @"金曜日";
     }else if (indexPath.row == 6){
         label = @"土曜日";
+    }else if (indexPath.row == 7){
+        label = @"日曜日";
+    }else if (indexPath.row == 8){
+        label = @"すべて";
     }
+
+
     cell.textLabel.text = [NSString stringWithFormat:@"%@", label];
     
     return cell;

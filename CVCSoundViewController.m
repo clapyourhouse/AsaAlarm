@@ -73,34 +73,39 @@
 //}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellIdentifier = kCellIdentifier;
-    CVCTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (!cell){
-        cell = [[CVCTableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
-    CVCTableViewCell *customCell = (CVCTableViewCell *) cell;
     NSString *label;
+//    for (int i = -1; i < indexPath.row; i++) {
+//        NSLog(@"i:%d",i);
+//        if (![label isEqual:[NSNull null]]) {
+//            label = [NSString stringWithFormat:@"ウサボイス%d",i + 1];
+//        }
+//    }
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", label];
+
     if (indexPath.row == 0) {
-        label = @"サウンド";
+        label = @"ウサボイス1";
     }else if(indexPath.row == 1){
-        label = @"タイトル";
+        label = @"ウサボイス2";
     }else if (indexPath.row == 2){
-        label = @"繰り返し";
+        label = @"ウサボイス3";
     }else if (indexPath.row == 3){
-        label = @"スヌーズ";
+        label = @"ウサボイス4";
     }
-    customCell.titileLbl.text = [NSString stringWithFormat:@"%@", label];
     
     return cell;
     
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    CVCTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
-//    cell.accessoryType = UITableViewCellAccessoryCheckmark;
-
-    //    NSLog(@"「%@」が選択されました", [spotData objectAtIndex:indexPath.row]);
+    // 選択されたセルを取得
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    // セルのアクセサリにチェックマークを指定
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    
     if (indexPath.row == 0) {
         [player play];
         //ライフサイクルで
@@ -125,12 +130,11 @@
     }
 }
 //// セルの選択がはずれた時に呼び出される
-//- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    // 選択がはずれたセルを取得
-//    CVCTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
-//    
-//    // セルのアクセサリを解除する（チェックマークを外す）
-//    cell.accessoryType = UITableViewCellAccessoryNone;
-//}
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 選択がはずれたセルを取得
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    // セルのアクセサリを解除する（チェックマークを外す）
+    cell.accessoryType = UITableViewCellAccessoryNone;
+}
 
 @end
