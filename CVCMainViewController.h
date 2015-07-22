@@ -10,6 +10,7 @@
 
 @interface CVCMainViewController : UIViewController{
     UINavigationController *navCon;
+    NSDateFormatter *fotmat;
 }
 - (IBAction)mainBtn:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *MessageLbl;

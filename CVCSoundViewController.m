@@ -84,7 +84,7 @@
 //            label = [NSString stringWithFormat:@"ウサボイス%d",i + 1];
 //        }
 //    }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", label];
+//    cell.textLabel.text = [NSString stringWithFormat:@"%@", label];
 
     if (indexPath.row == 0) {
         label = @"ウサボイス1";
@@ -95,7 +95,7 @@
     }else if (indexPath.row == 3){
         label = @"ウサボイス4";
     }
-    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", label];
     return cell;
     
 }

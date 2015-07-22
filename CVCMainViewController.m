@@ -23,6 +23,42 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self randMessage];
+    
+    [NSTimer scheduledTimerWithTimeInterval:1.0f
+                                     target:self
+                                   selector:@selector(currentTime)
+                                   userInfo:nil
+                                    repeats:YES];
+    
+}
+
+- (void)currentTime{
+    NSDate *date = [NSDate date];
+    [self currentWeek:date];
+    [self currentDay:date];
+    fotmat = [[NSDateFormatter alloc]init];
+    [fotmat setDateFormat:@"HH:mm:ss"];
+    [fotmat setTimeZone:[NSTimeZone defaultTimeZone]];
+    NSLog(@"date:%@",[NSString stringWithFormat:@"%@",[fotmat stringFromDate:date]]);
+}
+
+- (void)currentWeek:(NSDate*)date{
+    NSCalendar *calender = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *comps = [calender components:NSWeekdayCalendarUnit fromDate:date];
+    NSDateFormatter *df = [[NSDateFormatter alloc]init];
+    df.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"ja"];
+    
+    NSString *weekDayStr = df.shortWeekdaySymbols[comps.weekday-1];
+    NSLog(@"week:%@",[NSString stringWithFormat:@"%@",weekDayStr]);
+}
+
+- (void)currentDay:(NSDate*)date{
+    fotmat = [[NSDateFormatter alloc]init];
+    fotmat.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"ja"];
+
+    [fotmat setDateFormat:@"yyyy/MM/dd"];
+    [fotmat setTimeZone:[NSTimeZone defaultTimeZone]];
+    NSLog(@"day:%@",[NSString stringWithFormat:@"%@",[fotmat stringFromDate:date]]);
 }
 
 - (void)randMessage{

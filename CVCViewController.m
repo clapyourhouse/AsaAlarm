@@ -38,14 +38,34 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _dict =[[NSDictionary alloc]init];
+    
     self.collectionView.allowsMultipleSelection = YES;
 
     UINib *nib = [UINib nibWithNibName:@"CVCViewCell" bundle:nil];
     [self.collectionView registerNib:nib forCellWithReuseIdentifier:@"CellId"];
-    UIMenuItem *menuItem = [[UIMenuItem alloc] initWithTitle:@"Custom Action"
-                                                      action:@selector(customAction:)];
-    [[UIMenuController sharedMenuController] setMenuItems:[NSArray arrayWithObject:menuItem]];
-
+    
+    //cellが返ってくる。 親だけで完結。押されたcellを判別。
+//    CVCViewCell *cell = (CVCViewCell*)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+//    int cellId = cell.cellId;
+//    for (CVCItem *item in _items) {
+//        if (item.number == cellId) {
+//            [self delete:cellId];
+//        }
+//    }
+    
+    //cellに書く内容。
+//    [self.collectionView performSelector:@selector(delete:)];
+    
+//    
+//    UIMenuItem *menuItem = [[UIMenuItem alloc] initWithTitle:@"Custom Action"
+//                                                      action:@selector(customAction:)];
+//    UIMenuController *menu = [UIMenuController sharedMenuController];
+//    [menu setTargetRect:CGRectZero inView:self.view];
+//    [menu setMenuItems:[NSArray arrayWithObject:menuItem]];
+//    [menu setMenuVisible:YES];
+//    [[UIMenuController sharedMenuController] setMenuItems:[NSArray arrayWithObject:menuItem]];
+    
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -54,13 +74,16 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Do any additional setup after loading the view.
 }
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+
+}
 #pragma mark - UICollectionViewDelegate methods
 - (BOOL)collectionView:(UICollectionView *)collectionView
       canPerformAction:(SEL)action
     forItemAtIndexPath:(NSIndexPath *)indexPath
             withSender:(id)sender {
     if (action == @selector(delete:)) {
-        //menuの確認を出してから削除したいが...。
         [_items removeObjectAtIndex:indexPath.row];
         [self.collectionView reloadData];
         return YES;
@@ -69,6 +92,13 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 - (void)delete:(id)sender {
     NSLog(@"delete");
+//    //menuの確認を出してから削除したいが...。
+//    UIMenuItem *menuItem = [[UIMenuItem alloc] initWithTitle:@"Custom Action"
+//                                                      action:@selector(customAction:)];
+//    UIMenuController *menu = [UIMenuController sharedMenuController];
+//    [menu setTargetRect:CGRectZero inView:self.view];
+//    [menu setMenuItems:[NSArray arrayWithObject:menuItem]];
+//    [menu setMenuVisible:YES];
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView
@@ -89,15 +119,15 @@ shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
     // NOTE: The menu item will on iOS 6.0 without YES (May be optional on iOS 7.0)
     return YES;
 }
-
-- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
-    NSLog(@"canPerformAction");
-    // The selector(s) should match your UIMenuItem selector
-    if (action == @selector(customAction:)) {
-        return YES;
-    }
-    return NO;
-}
+//
+//- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
+//    NSLog(@"canPerformAction");
+//    // The selector(s) should match your UIMenuItem selector
+//    if (action == @selector(customAction:)) {
+//        return YES;
+//    }
+//    return NO;
+//}
 
 #pragma mark - Custom Action(s)
 - (void)customAction:(id)sender {
@@ -147,7 +177,6 @@ shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
     cell.numberLabel.text = [NSString stringWithFormat:@"%d",item.number];
     cell.capLabel.text = item.caption;
 
-    
     // Configure the cell
     UIView *selectedView = [UIView new];
     selectedView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.8 alpha:1.0];
@@ -168,7 +197,8 @@ shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
         [collectionView reloadData];
     }else{
         CVCEditViewController *editView = [[CVCEditViewController alloc]initWithNibName:@"CVCEditViewController" bundle:nil];
-        editView.cvcViewValue = i;
+        editView.cvcViewValue = item.number;
+        editView.cvcViewTitle = item.caption;
         [self.navigationController pushViewController:editView animated:YES];
     }
 }

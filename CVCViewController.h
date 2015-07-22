@@ -12,4 +12,5 @@
     UINavigationController *navCon;
 }
 
+@property (nonatomic,retain) NSDictionary *dict;
 @end

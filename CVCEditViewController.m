@@ -12,7 +12,6 @@
 //音も含め想定通りの動きをすること
 //複数localnotificaionが登録できる事。http://xcodeprogirl.hatenablog.com/entry/2013/12/20/151102
 //長押し時menuがでること
-//cellごとに個別のデータを持ちたい場合の構造。クリアする？
 #import "CVCEditViewController.h"
 #import "CVCSoundViewController.h"
 #import "CVCViewController.h"
@@ -31,11 +30,12 @@
 @end
 
 @implementation CVCEditViewController
-@synthesize cvcViewValue,alarmDateDetail,alarmDatePicker;
+@synthesize cvcViewValue,alarmDateDetail,alarmDatePicker,cvcViewTitle;
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _dataSources = [NSArray arrayWithObjects:@"",@"",@"", nil];
     self.title = @"アラーム編集";
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -44,7 +44,7 @@
     // iOS5からは最初に一度だけnibファイルを登録すればいい
     [self.tableView registerNib:[UINib nibWithNibName:@"CVCTableViewCell" bundle:nil]
          forCellReuseIdentifier:kCellIdentifier];
-    NSLog(@"データ？:%d",cvcViewValue);
+    NSLog(@"タイトル:%@",cvcViewTitle);
 
     alarmDatePicker.datePickerMode = UIDatePickerModeTime;
     // 日付ピッカーの値が変更されたときに呼ばれるメソッドを設定
@@ -159,10 +159,11 @@
         sublabel = @"サウンド";
     }else if(indexPath.row == 1){
         sublabel = @"タイトル";
-        mainLabel = [ud stringForKey:@"KEY_S"];
-        if (mainLabel) {
-            customCell.setLbl.text = mainLabel;
-        }
+        customCell.setLbl.text = cvcViewTitle;
+//        mainLabel = [ud stringForKey:@"KEY_S"];
+//        if (mainLabel) {
+//            customCell.setLbl.text = mainLabel;
+//        }
     }else if (indexPath.row == 2){
         sublabel = @"繰り返し";
     }else if (indexPath.row == 3){
@@ -252,7 +253,7 @@
     NSTimeInterval span = [date timeIntervalSinceDate:now];
     NSLog(@"時差は：%f",span);
     //ローカル通知
-    [[UIApplication sharedApplication]cancelAllLocalNotifications];
+//    [[UIApplication sharedApplication]cancelAllLocalNotifications];
     UILocalNotification *notification = [[UILocalNotification alloc]init];
     //ローカル通知させる時間を設定する
     notification.fireDate = [[NSDate date]dateByAddingTimeInterval:span];

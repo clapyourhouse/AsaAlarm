@@ -15,5 +15,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *alarmDateDetail;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property int cvcViewValue;
-@property (nonatomic, retain) NSArray *dataSource;
+@property NSString *cvcViewTitle;
+
+@property (nonatomic, retain) NSArray *dataSources;
 @end
