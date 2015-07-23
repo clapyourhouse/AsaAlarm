@@ -16,6 +16,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property int cvcViewValue;
 @property NSString *cvcViewTitle;
+@property NSString *popSoundTittle;
 
 @property (nonatomic, retain) NSArray *dataSources;
 @end

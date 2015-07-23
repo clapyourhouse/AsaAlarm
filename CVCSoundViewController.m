@@ -7,6 +7,7 @@
 //
 
 #import "CVCSoundViewController.h"
+#import "CVCEditViewController.h"
 #import "CVCTableViewCell.h"
 #import <AVFoundation/AVFoundation.h>
 #define kCellIdentifier @"CellIdentifier"
@@ -14,6 +15,8 @@
 
 @interface CVCSoundViewController (){
     AVAudioPlayer *player;
+    CVCEditViewController *parent;
+    NSString *label;
 }
 
 @end
@@ -44,6 +47,16 @@
     }
     // Do any additional setup after loading the view from its nib.
 }
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    NSArray *array = self.navigationController.viewControllers;
+    NSUInteger arrayCount = [array count];
+    parent = [array objectAtIndex:arrayCount - 1];
+    if ((![parent.popSoundTittle isEqual: @"なし"])) {
+        parent.popSoundTittle = label;
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -77,7 +90,6 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
-    NSString *label;
 //    for (int i = -1; i < indexPath.row; i++) {
 //        NSLog(@"i:%d",i);
 //        if (![label isEqual:[NSNull null]]) {
@@ -107,20 +119,17 @@
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
     
     if (indexPath.row == 0) {
-        [player play];
-        //ライフサイクルで
-//        [self.navigationController popViewControllerAnimated:YES];
-
+        label = @"ウサボイス1";
+//        [player play];
     }else if (indexPath.row == 1) {
-        UIAlertView* alert = [UIAlertView new];
-        alert.title = @"サウンド";
-        alert.message = @"この音でよろしいですか？";
-        alert.delegate = self;  //<UIAlertViewDelegate>を設定する事
-        [alert addButtonWithTitle:@"cancel"];
-        [alert addButtonWithTitle:@"OK"];
-        [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];//１行で実装
-        [alert show];
+        label = @"ウサボイス2";
+    }else if (indexPath.row == 2){
+        label = @"ウサボイス3";
+    }else if (indexPath.row == 3){
+        label = @"ウサボイス4";
     }
+    parent.popSoundTittle = label;
+
 }
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     

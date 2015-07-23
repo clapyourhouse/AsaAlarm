@@ -6,10 +6,10 @@
 //  Copyright (c) 2015年 北村 彰悟. All rights reserved.
 //
 //TODO
-//設定が上書きされてしまう事。
 //スヌーズ
 //繰り返し
 //音も含め想定通りの動きをすること
+//デザイン反映
 //複数localnotificaionが登録できる事。http://xcodeprogirl.hatenablog.com/entry/2013/12/20/151102
 //長押し時menuがでること
 #import "CVCEditViewController.h"
@@ -30,7 +30,7 @@
 @end
 
 @implementation CVCEditViewController
-@synthesize cvcViewValue,alarmDateDetail,alarmDatePicker,cvcViewTitle;
+@synthesize cvcViewValue,alarmDateDetail,alarmDatePicker,cvcViewTitle,popSoundTittle;
 
 
 - (void)viewDidLoad {
@@ -60,12 +60,16 @@
     [super viewWillDisappear:animated];
     CVCViewCell *cellVal = [[CVCViewCell alloc]init];
     cellVal.capLabel.text = @"ほげ";
+
 }
 - (void)viewWillAppear:(BOOL)animated
 {
     NSLog(@"viewWillAppear");
     [super viewWillAppear:animated];
+    //ここに下の階層からきた値を。
+    NSLog(@"サウンド。:%@",popSoundTittle);
     [self.tableView reloadData];
+
 
 }
 
@@ -157,6 +161,7 @@
     ud = [NSUserDefaults standardUserDefaults];
     if (indexPath.row == 0) {
         sublabel = @"サウンド";
+        customCell.setLbl.text = popSoundTittle;
     }else if(indexPath.row == 1){
         sublabel = @"タイトル";
         customCell.setLbl.text = cvcViewTitle;
@@ -221,9 +226,9 @@
     if (buttonIndex==1) {
         NSLog(@"text=%@",[[alertView textFieldAtIndex:0] text]);
         NSString *alarmTitle = [[alertView textFieldAtIndex:0] text];
-        ud = [NSUserDefaults standardUserDefaults];
-        [ud setObject:alarmTitle forKey:@"KEY_S"];
-
+        cvcViewTitle = alarmTitle;
+//        ud = [NSUserDefaults standardUserDefaults];
+//        [ud setObject:alarmTitle forKey:@"KEY_S"];
         [self.tableView reloadData];
     }
 }

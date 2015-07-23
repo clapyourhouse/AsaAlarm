@@ -33,13 +33,13 @@
 }
 
 - (void)currentTime{
-    NSDate *date = [NSDate date];
-    [self currentWeek:date];
-    [self currentDay:date];
-    fotmat = [[NSDateFormatter alloc]init];
-    [fotmat setDateFormat:@"HH:mm:ss"];
-    [fotmat setTimeZone:[NSTimeZone defaultTimeZone]];
-    NSLog(@"date:%@",[NSString stringWithFormat:@"%@",[fotmat stringFromDate:date]]);
+//    NSDate *date = [NSDate date];
+//    [self currentWeek:date];
+//    [self currentDay:date];
+//    fotmat = [[NSDateFormatter alloc]init];
+//    [fotmat setDateFormat:@"HH:mm:ss"];
+//    [fotmat setTimeZone:[NSTimeZone defaultTimeZone]];
+//    NSLog(@"date:%@",[NSString stringWithFormat:@"%@",[fotmat stringFromDate:date]]);
 }
 
 - (void)currentWeek:(NSDate*)date{
