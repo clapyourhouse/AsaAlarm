@@ -137,11 +137,13 @@
 				EBB7A1C11B381CEA00836918 /* theme_song_01.mp3 */,
 			);
 			name = Contents;
+			path = collectionViewCompleted;
 			sourceTree = "<group>";
 		};
 		EBE447FD1B3276C5006DF2A6 = {
 			isa = PBXGroup;
 			children = (
+				EBB7A1C31B381CF200836918 /* Contents */,
 				EBB7A1BF1B381B3300836918 /* AVFoundation.framework */,
 				EBB7A1BD1B381AF600836918 /* AudioToolbox.framework */,
 				EBE448081B3276C5006DF2A6 /* collectionViewCompleted */,
@@ -188,7 +190,6 @@
 		EBE448091B3276C5006DF2A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EBB7A1C31B381CF200836918 /* Contents */,
 				EBE4480A1B3276C5006DF2A6 /* Info.plist */,
 				EBE4480B1B3276C5006DF2A6 /* main.m */,
 			);

@@ -10,7 +10,9 @@
 
 @class CVCMainViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    int i;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 

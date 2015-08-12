@@ -29,6 +29,10 @@
 @interface CVCEditViewController (){
     UITableViewCell *cell;
     NSUserDefaults *ud;
+    BOOL pickerFlg;
+    NSString *curData;
+    //タイトル
+    NSString *alarmTitle;
 }
 
 @end
@@ -38,6 +42,7 @@
 
 
 - (void)viewDidLoad {
+    pickerFlg = NO;
     [super viewDidLoad];
     _dataSources = [NSArray arrayWithObjects:@"",@"",@"", nil];
     self.title = @"アラーム編集";
@@ -63,6 +68,9 @@
     NSLog(@"viewWillDisappear");
     [super viewWillDisappear:animated];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if (pickerFlg == YES) {
+        [userDefaults setObject:curData forKey:@"number"];
+    }
     [userDefaults setObject:cvcViewTitle forKey:@"caption"];
     [userDefaults synchronize];
 }
@@ -88,13 +96,13 @@
  */
 - (void)datePicker_ValueChanged:(id)sender
 {
+    pickerFlg = YES;
     UIDatePicker *datePicker = sender;
-    
     // 日付の表示形式を設定
     NSDateFormatter *df = [[NSDateFormatter alloc]init];
     df.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"ja"];
     df.dateFormat = @"yyyy/MM/dd/HH:mm";
-    NSString *setDate = [df stringFromDate:datePicker.date];
+    NSString* setDate = [df stringFromDate:datePicker.date];
     NSArray *names = [setDate componentsSeparatedByString:@"/"];
     NSString *x = [names objectAtIndex:0];
     int year = [x intValue];
@@ -113,6 +121,12 @@
     [self calenderFromNotification:year :month :day :hour :minute];
     // ログに日付を表示
     NSLog(@"%@", [df stringFromDate:datePicker.date]);
+    
+    //値表示用データ
+    NSDateFormatter *current = [[NSDateFormatter alloc]init];
+    current.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"ja"];
+    current.dateFormat = @"HH:mm";
+    curData = [current stringFromDate:datePicker.date];
 }
 
 
@@ -230,7 +244,7 @@
     
     if (buttonIndex==1) {
         NSLog(@"text=%@",[[alertView textFieldAtIndex:0] text]);
-        NSString *alarmTitle = [[alertView textFieldAtIndex:0] text];
+        alarmTitle = [[alertView textFieldAtIndex:0] text];
         NSLog(@"titile:%@",alarmTitle);
         if ([alarmTitle isEqualToString:@""]) {
             return;
@@ -276,11 +290,12 @@
     notification.repeatInterval = NSWeekCalendarUnit;
     notification.timeZone = [NSTimeZone localTimeZone];
     notification.applicationIconBadgeNumber = 1;
-    notification.alertBody = [NSString stringWithFormat:@"起きなさい"];
+    notification.alertBody = [NSString stringWithFormat:@"%@",alarmTitle];
     //通知されたときの音
     notification.soundName = @"Contents/theme_song_01.mp3";
     notification.alertAction = @"おはよ";
-    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:@"通知を受信しました" forKey:@"EventKey"];
+    NSArray *array = [NSArray arrayWithObjects:@"通知を受信しました",@"起きなさい", nil];
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:array forKey:@"EventKey"];
     notification.userInfo = infoDict;
     
     

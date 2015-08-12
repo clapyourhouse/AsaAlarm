@@ -54,6 +54,12 @@
     //    self.player = [[AVAudioPlayer alloc]initWithContentsOfURL:file error:nil];
     //    [self.player prepareToPlay];
     //    [self.player play];
+    //これでどんだけでも通知内容をこちらに持ってこれる。//ここで見て、音を分ければいける。
+    //スヌーズも値を持っておいて、値がデフォルトでなければ、+分で再生を再設定。
+    NSLog(@"notification%@",notification.alertBody);
+    NSArray *array = [notification.userInfo objectForKey:@"EventKey"];
+    NSString *string = [array objectAtIndex:0];
+    NSLog(@"eventString:%@",string);
     // アプリ起動中(フォアグラウンド)に通知が届いた場合
     if(application.applicationState == UIApplicationStateActive) {
         // ここに処理を書く
@@ -65,7 +71,7 @@
     }
     
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"わーい"
-                                                        message:@"おはようございます"
+                                                        message:notification.alertBody
                                                        delegate:nil
                                               cancelButtonTitle:@"起きる"
                                               otherButtonTitles: @"スヌーズ",nil];
@@ -75,5 +81,11 @@
     [[UIApplication sharedApplication] cancelLocalNotification:notification];
     
 }
-
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if (buttonIndex==1) {
+        
+        
+    }
+}
 @end

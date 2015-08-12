@@ -84,9 +84,14 @@ static NSString * const reuseIdentifier = @"Cell";
     NSLog(@"viewWillAppear");
     [super viewWillAppear:animated];
     NSLog(@"cap:%@",item.caption);
+    NSLog(@"time:%d",item.number);
+
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *name = [userDefaults objectForKey:@"caption"];
-    item.caption = name;
+    NSString *time = [userDefaults objectForKey:@"number"];
+    item.setTime = time;
+    item.caption = time;
+    NSLog(@"cur:%@",time);
     
     [self.collectionView reloadData];
     

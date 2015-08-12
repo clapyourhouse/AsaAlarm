@@ -11,6 +11,7 @@
 @interface CVCItem : NSObject
 
 @property (nonatomic) int number;
+@property (strong, nonatomic) NSString *setTime;
 @property (strong, nonatomic) NSString *caption;
 
 @end
