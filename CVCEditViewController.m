@@ -11,6 +11,7 @@
 //音も含め想定通りの動きをすること
 //デザイン反映
 //複数localnotificaionが登録できる事。http://xcodeprogirl.hatenablog.com/entry/2013/12/20/151102
+//localnotification系ではわかりやすいかも。http://mirai-stereo.net/2014/06/08/objectivec-uilocalnotification-setting/
 //長押し時menuがでること
 //※テストの方法としては、プロジェクトを実行後にiPhoneの設定から時間を変更して、正しくその週だけローカル通知がされているか確認する。
 //デザイン反映。
@@ -21,6 +22,7 @@
 #import "CVCRepeatViewController.h"
 #import "CVCTableViewCell.h"
 #import "CVCViewCell.h"
+#import "CVCItem.h"
 
 #define kCellIdentifier @"CellIdentifier"
 
@@ -60,9 +62,9 @@
 {
     NSLog(@"viewWillDisappear");
     [super viewWillDisappear:animated];
-    CVCViewCell *cellVal = [[CVCViewCell alloc]init];
-    cellVal.capLabel.text = @"ほげ";
-
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:cvcViewTitle forKey:@"caption"];
+    [userDefaults synchronize];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -90,6 +92,7 @@
     
     // 日付の表示形式を設定
     NSDateFormatter *df = [[NSDateFormatter alloc]init];
+    df.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"ja"];
     df.dateFormat = @"yyyy/MM/dd/HH:mm";
     NSString *setDate = [df stringFromDate:datePicker.date];
     NSArray *names = [setDate componentsSeparatedByString:@"/"];
@@ -163,14 +166,15 @@
     ud = [NSUserDefaults standardUserDefaults];
     if (indexPath.row == 0) {
         sublabel = @"サウンド";
+        //nullチェック
+        if (![popSoundTittle length] > 0){
+            popSoundTittle = @"ウサ";
+        }
         customCell.setLbl.text = popSoundTittle;
     }else if(indexPath.row == 1){
         sublabel = @"タイトル";
         customCell.setLbl.text = cvcViewTitle;
-//        mainLabel = [ud stringForKey:@"KEY_S"];
-//        if (mainLabel) {
-//            customCell.setLbl.text = mainLabel;
-//        }
+        
     }else if (indexPath.row == 2){
         sublabel = @"繰り返し";
     }else if (indexPath.row == 3){
@@ -185,7 +189,6 @@
     return cell;
     
 }
-
 /**
  * セルが選択されたとき
  */
@@ -228,9 +231,11 @@
     if (buttonIndex==1) {
         NSLog(@"text=%@",[[alertView textFieldAtIndex:0] text]);
         NSString *alarmTitle = [[alertView textFieldAtIndex:0] text];
+        NSLog(@"titile:%@",alarmTitle);
+        if ([alarmTitle isEqualToString:@""]) {
+            return;
+        }
         cvcViewTitle = alarmTitle;
-//        ud = [NSUserDefaults standardUserDefaults];
-//        [ud setObject:alarmTitle forKey:@"KEY_S"];
         [self.tableView reloadData];
     }
 }
@@ -273,7 +278,7 @@
     notification.applicationIconBadgeNumber = 1;
     notification.alertBody = [NSString stringWithFormat:@"起きなさい"];
     //通知されたときの音
-    notification.soundName = UILocalNotificationDefaultSoundName;
+    notification.soundName = @"Contents/theme_song_01.mp3";
     notification.alertAction = @"おはよ";
     NSDictionary *infoDict = [NSDictionary dictionaryWithObject:@"通知を受信しました" forKey:@"EventKey"];
     notification.userInfo = infoDict;

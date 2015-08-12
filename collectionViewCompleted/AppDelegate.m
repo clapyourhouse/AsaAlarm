@@ -54,6 +54,16 @@
     //    self.player = [[AVAudioPlayer alloc]initWithContentsOfURL:file error:nil];
     //    [self.player prepareToPlay];
     //    [self.player play];
+    // アプリ起動中(フォアグラウンド)に通知が届いた場合
+    if(application.applicationState == UIApplicationStateActive) {
+        // ここに処理を書く
+    }
+    
+    // アプリがバックグラウンドにある状態で通知が届いた場合
+    if(application.applicationState == UIApplicationStateInactive) {
+        // ここに処理を書く
+    }
+    
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"わーい"
                                                         message:@"おはようございます"
                                                        delegate:nil
@@ -61,7 +71,9 @@
                                               otherButtonTitles: @"スヌーズ",nil];
     [alertView show];
     
-    //    [self setupWindow];
+    // 通知領域から削除する
+    [[UIApplication sharedApplication] cancelLocalNotification:notification];
+    
 }
 
 @end

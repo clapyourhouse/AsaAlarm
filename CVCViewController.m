@@ -16,6 +16,7 @@
 @implementation CVCViewController{
     NSMutableArray *_items;
     int i;
+    CVCItem *item;
 }
 
 
@@ -27,7 +28,7 @@ static NSString * const reuseIdentifier = @"Cell";
         self.title = @"アラーム";        
         _items = [NSMutableArray arrayWithCapacity:0];
         for (i = 0;i < 10; i++) {
-            CVCItem *item = [[CVCItem alloc]init];
+            item = [[CVCItem alloc]init];
             item.number = i+1;
             item.caption = [NSString stringWithFormat:@"cap%d",item.number];
 
@@ -78,6 +79,19 @@ static NSString * const reuseIdentifier = @"Cell";
     [super viewDidAppear:animated];
 
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"viewWillAppear");
+    [super viewWillAppear:animated];
+    NSLog(@"cap:%@",item.caption);
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *name = [userDefaults objectForKey:@"caption"];
+    item.caption = name;
+    
+    [self.collectionView reloadData];
+    
+}
+
 #pragma mark - UICollectionViewDelegate methods
 - (BOOL)collectionView:(UICollectionView *)collectionView
       canPerformAction:(SEL)action
@@ -134,14 +148,6 @@ shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"custom action! %@", sender);
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    NSLog(@"viewWillAppear");
-    [super viewWillAppear:animated];
-    
-}
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -160,7 +166,6 @@ shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete method implementation -- Return the number of sections
     return 1;
 }
 
@@ -173,7 +178,7 @@ shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
 
     NSString *cellId = @"CellId";
     CVCViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
-    CVCItem *item = [_items objectAtIndex:indexPath.row];
+    item = [_items objectAtIndex:indexPath.row];
     cell.numberLabel.text = [NSString stringWithFormat:@"%d",item.number];
     cell.capLabel.text = item.caption;
 
@@ -185,10 +190,12 @@ shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 #pragma mark - UICollectionViewDelegate
-
+//選択時
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CVCItem *item = [_items objectAtIndex:indexPath.row];
+    item = [_items objectAtIndex:indexPath.row];
+    //確認。
+    NSLog(@"%@",item.caption);
     if (indexPath.row + 1 == _items.count) {
         i++;
         item.number = i;
