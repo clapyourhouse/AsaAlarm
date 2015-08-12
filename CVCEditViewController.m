@@ -12,6 +12,8 @@
 //デザイン反映
 //複数localnotificaionが登録できる事。http://xcodeprogirl.hatenablog.com/entry/2013/12/20/151102
 //長押し時menuがでること
+//※テストの方法としては、プロジェクトを実行後にiPhoneの設定から時間を変更して、正しくその週だけローカル通知がされているか確認する。
+//デザイン反映。
 #import "CVCEditViewController.h"
 #import "CVCSoundViewController.h"
 #import "CVCViewController.h"
@@ -233,6 +235,8 @@
     }
 }
 
+//音、スヌーズ、
+//繰り返しとデザイン以外は仕上げたいな。
 - (void)calenderFromNotification:(int)year :(int)month :(int)day :(int)hour :(int)minute{
     NSLog(@"%d年%d月%d日%d時%d分",year,month,day,hour,minute);
     //西暦で計算するよう設定
@@ -242,6 +246,7 @@
     [comps setMonth:month];
     [comps setDay:day];
     //曜日を指定。0が日曜日。順に行って6が土曜日。
+    //単純に、配列に入れて代入なのか？数分、setWeekdayを繰り返せばいいのか？そもそも生きていない？
     [comps setWeekday:2];
     //その月の何週目に通知させるか指定する。このメソッドを追加することにより、アラームを毎週リピートにしても、第２週にお知らせしてくれる。
     [comps setWeekdayOrdinal:3];
