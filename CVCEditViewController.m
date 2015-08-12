@@ -38,7 +38,7 @@
 @end
 
 @implementation CVCEditViewController
-@synthesize cvcViewValue,alarmDateDetail,alarmDatePicker,cvcViewTitle,popSoundTittle;
+@synthesize cvcViewValue,alarmDateDetail,alarmDatePicker,cvcViewTitle,popSoundTittle,repeatLabel,snoozeTime;
 
 
 - (void)viewDidLoad {
@@ -182,20 +182,31 @@
         sublabel = @"サウンド";
         //nullチェック
         if (![popSoundTittle length] > 0){
-            popSoundTittle = @"ウサ";
+            popSoundTittle = @"-";
         }
         customCell.setLbl.text = popSoundTittle;
     }else if(indexPath.row == 1){
         sublabel = @"タイトル";
+        if (![popSoundTittle length] > 0){
+            popSoundTittle = @"-";
+        }
+        //上の階層でViewと一緒に値を送っているので、上の処理を通ることはない。
         customCell.setLbl.text = cvcViewTitle;
         
     }else if (indexPath.row == 2){
         sublabel = @"繰り返し";
+        if (![repeatLabel length] > 0){
+            repeatLabel = @"-";
+        }
+        customCell.setLbl.text = repeatLabel;
     }else if (indexPath.row == 3){
         sublabel = @"スヌーズ";
-        NSInteger v = [ud integerForKey:@"KEY_I"];
-        NSString *m = [NSString stringWithFormat:@"%ld",(long)v];
-        customCell.setLbl.text = [NSString stringWithFormat:@"%@分", m];
+        if (!snoozeTime > 0){
+            customCell.setLbl.text = @"なし";
+            customCell.titileLbl.text = [NSString stringWithFormat:@"%@", sublabel];
+            return cell;
+        }
+        customCell.setLbl.text = [NSString stringWithFormat:@"%d分", snoozeTime];
     }
     customCell.titileLbl.text = [NSString stringWithFormat:@"%@", sublabel];
 
@@ -294,7 +305,7 @@
     //通知されたときの音
     notification.soundName = @"Contents/theme_song_01.mp3";
     notification.alertAction = @"おはよ";
-    NSArray *array = [NSArray arrayWithObjects:@"通知を受信しました",@"起きなさい", nil];
+    NSArray *array = [NSArray arrayWithObjects:@"通知を受信しました",@"起きなさい",popSoundTittle, nil];
     NSDictionary *infoDict = [NSDictionary dictionaryWithObject:array forKey:@"EventKey"];
     notification.userInfo = infoDict;
     

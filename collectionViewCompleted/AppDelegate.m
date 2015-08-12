@@ -49,17 +49,21 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 - (void) application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-    //    NSString *path = [[NSBundle mainBundle] pathForResource:@"Best_Morning_Alarm" ofType:@"m4r"];
-    //    NSURL *file = [[NSURL alloc]initFileURLWithPath:path];
-    //    self.player = [[AVAudioPlayer alloc]initWithContentsOfURL:file error:nil];
-    //    [self.player prepareToPlay];
-    //    [self.player play];
     //これでどんだけでも通知内容をこちらに持ってこれる。//ここで見て、音を分ければいける。
-    //スヌーズも値を持っておいて、値がデフォルトでなければ、+分で再生を再設定。
+    //スヌーズも値を持っておいて、値がデフォルトでなければ、+分でアラームを開始。
     NSLog(@"notification%@",notification.alertBody);
     NSArray *array = [notification.userInfo objectForKey:@"EventKey"];
-    NSString *string = [array objectAtIndex:0];
+    NSString *string = [array objectAtIndex:2];
     NSLog(@"eventString:%@",string);
+    if ([string isEqualToString:@"ウサボイス1"]) {
+        NSLog(@"ウサボイス1の音源を再生します。");
+        //    NSString *path = [[NSBundle mainBundle] pathForResource:@"Best_Morning_Alarm" ofType:@"m4r"];
+        //    NSURL *file = [[NSURL alloc]initFileURLWithPath:path];
+        //    self.player = [[AVAudioPlayer alloc]initWithContentsOfURL:file error:nil];
+        //    [self.player prepareToPlay];
+        //    [self.player play];
+    }else if([string isEqualToString:@"ウサボイス2"]){
+    }
     // アプリ起動中(フォアグラウンド)に通知が届いた場合
     if(application.applicationState == UIApplicationStateActive) {
         // ここに処理を書く

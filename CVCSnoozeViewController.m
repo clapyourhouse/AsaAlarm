@@ -12,7 +12,10 @@
 #import <AVFoundation/AVFoundation.h>
 #define kCellIdentifier @"CellIdentifier"
 
-@interface CVCSnoozeViewController ()
+@interface CVCSnoozeViewController (){
+    CVCEditViewController *parent;
+    int i;
+}
 
 @end
 
@@ -37,7 +40,14 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    NSArray *array = self.navigationController.viewControllers;
+    NSUInteger arrayCount = [array count];
+    parent = [array objectAtIndex:arrayCount - 1];
+    //    if ((![parent.repeatLabel isEqual: @"-"])) {
+    parent.snoozeTime = i;
+    //    }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -109,19 +119,19 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     // セルのアクセサリにチェックマークを指定
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    NSLog(@"何番目？:%ld",(long)indexPath.row);
-    // NSUserDefaultsに保存・更新する
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     if (indexPath.row == 0) {
     }else if (indexPath.row == 1) {
+        i = 1;
     }else if (indexPath.row == 2) {
+        i = 3;
     }else if (indexPath.row == 3) {
+        i = 5;
     }else if (indexPath.row == 4) {
-        [ud setInteger:9 forKey:@"KEY_I"];
+        i = 9;
     }else if (indexPath.row == 5) {
-        [ud setInteger:15 forKey:@"KEY_I"];
+        i = 15;
     }
-    [ud synchronize];
+    parent.snoozeTime = i;
 
 }
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{

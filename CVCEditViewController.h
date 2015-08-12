@@ -17,6 +17,8 @@
 @property int cvcViewValue;
 @property NSString *cvcViewTitle;
 @property NSString *popSoundTittle;
+@property NSString *repeatLabel;
+@property int snoozeTime;
 
 @property (nonatomic, retain) NSArray *dataSources;
 @end

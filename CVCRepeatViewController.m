@@ -9,9 +9,13 @@
 #import "CVCRepeatViewController.h"
 #import "CVCTableViewCell.h"
 #import <AVFoundation/AVFoundation.h>
+#import "CVCEditViewController.h"
 #define kCellIdentifier @"CellIdentifier"
 
-@interface CVCRepeatViewController ()
+@interface CVCRepeatViewController (){
+    CVCEditViewController *parent;
+    NSString *label;
+}
 
 @end
 
@@ -32,7 +36,15 @@
     
     // Do any additional setup after loading the view from its nib.
 }
-
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    NSArray *array = self.navigationController.viewControllers;
+    NSUInteger arrayCount = [array count];
+    parent = [array objectAtIndex:arrayCount - 1];
+//    if ((![parent.repeatLabel isEqual: @"-"])) {
+        parent.repeatLabel = label;
+//    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -75,7 +87,6 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
-    NSString *label;
     if (indexPath.row == 0) {
         label = @"繰り返しはしない";
     }else if(indexPath.row == 1){
@@ -111,9 +122,27 @@
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
     
     if (indexPath.row == 0) {
-        
-    }else if (indexPath.row == 1) {
+        label = @"繰り返しはしない";
+    }else if(indexPath.row == 1){
+        label = @"月曜日";
+    }else if (indexPath.row == 2){
+        label = @"火曜日";
+    }else if (indexPath.row == 3){
+        label = @"水曜日";
+    }else if (indexPath.row == 4){
+        label = @"木曜日";
+    }else if (indexPath.row == 5){
+        label = @"金曜日";
+    }else if (indexPath.row == 6){
+        label = @"土曜日";
+    }else if (indexPath.row == 7){
+        label = @"日曜日";
+    }else if (indexPath.row == 8){
+        label = @"すべて";
     }
+    
+    parent.popSoundTittle = label;
+
 }
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     

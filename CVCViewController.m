@@ -27,7 +27,7 @@ static NSString * const reuseIdentifier = @"Cell";
     if (self) {
         self.title = @"アラーム";        
         _items = [NSMutableArray arrayWithCapacity:0];
-        for (i = 0;i < 10; i++) {
+        for (i = 0;i < 3; i++) {
             item = [[CVCItem alloc]init];
             item.number = i+1;
             item.caption = [NSString stringWithFormat:@"cap%d",item.number];
@@ -90,7 +90,7 @@ static NSString * const reuseIdentifier = @"Cell";
     NSString *name = [userDefaults objectForKey:@"caption"];
     NSString *time = [userDefaults objectForKey:@"number"];
     item.setTime = time;
-    item.caption = time;
+    item.caption = name;
     NSLog(@"cur:%@",time);
     
     [self.collectionView reloadData];
