@@ -176,7 +176,6 @@
     }
     CVCTableViewCell *customCell = (CVCTableViewCell *) cell;
     NSString *sublabel;
-    NSString *mainLabel;
     ud = [NSUserDefaults standardUserDefaults];
     if (indexPath.row == 0) {
         sublabel = @"サウンド";
@@ -277,7 +276,7 @@
     [comps setDay:day];
     //曜日を指定。0が日曜日。順に行って6が土曜日。
     //単純に、配列に入れて代入なのか？数分、setWeekdayを繰り返せばいいのか？そもそも生きていない？
-    [comps setWeekday:2];
+    [comps setWeekday:5];
     //その月の何週目に通知させるか指定する。このメソッドを追加することにより、アラームを毎週リピートにしても、第２週にお知らせしてくれる。
     [comps setWeekdayOrdinal:3];
     //時間を指定。+9しているのは、GMT時間を日本時間に合わせる為。
@@ -293,7 +292,7 @@
     NSTimeInterval span = [date timeIntervalSinceDate:now];
     NSLog(@"時差は：%f",span);
     //ローカル通知
-//    [[UIApplication sharedApplication]cancelAllLocalNotifications];
+    [[UIApplication sharedApplication]cancelAllLocalNotifications];
     UILocalNotification *notification = [[UILocalNotification alloc]init];
     //ローカル通知させる時間を設定する
     notification.fireDate = [[NSDate date]dateByAddingTimeInterval:span];
@@ -305,7 +304,7 @@
     //通知されたときの音
     notification.soundName = @"Contents/theme_song_01.mp3";
     notification.alertAction = @"おはよ";
-    NSArray *array = [NSArray arrayWithObjects:@"通知を受信しました",@"起きなさい",popSoundTittle, nil];
+    NSArray *array = [NSArray arrayWithObjects:@"通知を受信しました",@"起きなさい",popSoundTittle,snoozeTime,nil];
     NSDictionary *infoDict = [NSDictionary dictionaryWithObject:array forKey:@"EventKey"];
     notification.userInfo = infoDict;
     

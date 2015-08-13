@@ -51,10 +51,12 @@
 - (void) application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
     //これでどんだけでも通知内容をこちらに持ってこれる。//ここで見て、音を分ければいける。
     //スヌーズも値を持っておいて、値がデフォルトでなければ、+分でアラームを開始。
-    NSLog(@"notification%@",notification.alertBody);
+    NSLog(@"notificationAlert%@",notification.alertBody);
+    //userInfoで必要な情報をすべて持ってきて、アラーム登録のメソッドを呼び出すだけかな？
     NSArray *array = [notification.userInfo objectForKey:@"EventKey"];
     NSString *string = [array objectAtIndex:2];
     NSLog(@"eventString:%@",string);
+    NSLog(@"notification:%@",notification);
     if ([string isEqualToString:@"ウサボイス1"]) {
         NSLog(@"ウサボイス1の音源を再生します。");
         //    NSString *path = [[NSBundle mainBundle] pathForResource:@"Best_Morning_Alarm" ofType:@"m4r"];
@@ -63,6 +65,8 @@
         //    [self.player prepareToPlay];
         //    [self.player play];
     }else if([string isEqualToString:@"ウサボイス2"]){
+        
+    
     }
     // アプリ起動中(フォアグラウンド)に通知が届いた場合
     if(application.applicationState == UIApplicationStateActive) {
@@ -88,7 +92,7 @@
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
     if (buttonIndex==1) {
-        
+        NSLog(@"スヌーズ");
         
     }
 }
