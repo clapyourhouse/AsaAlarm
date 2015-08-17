@@ -477,12 +477,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 彰悟 北村 (LMJHPTA2NG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kuriko Kobayashi (24SJSA4485)";
 				INFOPLIST_FILE = collectionViewCompleted/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e3471370-eb22-47e6-816a-2bb23b626591";
+				PROVISIONING_PROFILE = "55268f50-da09-476f-9e1c-fa604ccad03b";
 			};
 			name = Debug;
 		};
@@ -491,12 +491,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 彰悟 北村 (LMJHPTA2NG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kuriko Kobayashi (24SJSA4485)";
 				INFOPLIST_FILE = collectionViewCompleted/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e3471370-eb22-47e6-816a-2bb23b626591";
+				PROVISIONING_PROFILE = "55268f50-da09-476f-9e1c-fa604ccad03b";
 			};
 			name = Release;
 		};

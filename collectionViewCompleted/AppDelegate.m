@@ -24,6 +24,12 @@
     self.viewController = nav;
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    //iOS8からローカル通知もユーザーの許可がいる。
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound categories:nil];
+        [application registerUserNotificationSettings:settings];
+    }
     return YES;
 }
 
