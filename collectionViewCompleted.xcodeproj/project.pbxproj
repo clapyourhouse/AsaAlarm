@@ -11,6 +11,43 @@
 		EB1207481B3A929100C20217 /* CVCSnoozeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB1207461B3A929100C20217 /* CVCSnoozeViewController.xib */; };
 		EB12074C1B3A942B00C20217 /* CVCRepeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB12074A1B3A942B00C20217 /* CVCRepeatViewController.m */; };
 		EB12074D1B3A942B00C20217 /* CVCRepeatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB12074B1B3A942B00C20217 /* CVCRepeatViewController.xib */; };
+		EB5B0FC81B83350C0049ECAD /* 0525_ゆさアプリ_アイコン.ai in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0F9F1B83350C0049ECAD /* 0525_ゆさアプリ_アイコン.ai */; };
+		EB5B0FC91B83350C0049ECAD /* 0525_ゆさアプリui_アラーム編集2.ai in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FA01B83350C0049ECAD /* 0525_ゆさアプリui_アラーム編集2.ai */; };
+		EB5B0FCA1B83350C0049ECAD /* 0527_ユサアプリ_ランディングページ.ai in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FA11B83350C0049ECAD /* 0527_ユサアプリ_ランディングページ.ai */; };
+		EB5B0FCB1B83350C0049ECAD /* 0607_ゆさアプリui_YUSA.ai in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FA21B83350C0049ECAD /* 0607_ゆさアプリui_YUSA.ai */; };
+		EB5B0FCC1B83350C0049ECAD /* 0607_ゆさアプリui_アラーム.ai in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FA31B83350C0049ECAD /* 0607_ゆさアプリui_アラーム.ai */; };
+		EB5B0FCD1B83350C0049ECAD /* 0607_ゆさアプリui_アラーム画面.ai in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FA41B83350C0049ECAD /* 0607_ゆさアプリui_アラーム画面.ai */; };
+		EB5B0FCE1B83350C0049ECAD /* 0607_ゆさアプリui_スヌーズ.ai in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FA51B83350C0049ECAD /* 0607_ゆさアプリui_スヌーズ.ai */; };
+		EB5B0FCF1B83350C0049ECAD /* 0607_ゆさアプリui_繰り返し.ai in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FA61B83350C0049ECAD /* 0607_ゆさアプリui_繰り返し.ai */; };
+		EB5B0FD01B83350C0049ECAD /* 0607_ゆさアプリui_設定.ai in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FA71B83350C0049ECAD /* 0607_ゆさアプリui_設定.ai */; };
+		EB5B0FD11B83350C0049ECAD /* 0628_ゆさアプリui_サウンド.ai in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FA81B83350C0049ECAD /* 0628_ゆさアプリui_サウンド.ai */; };
+		EB5B0FD21B83350C0049ECAD /* 0628_ゆさアプリui_トップ.ai in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FA91B83350C0049ECAD /* 0628_ゆさアプリui_トップ.ai */; };
+		EB5B0FD31B83350C0049ECAD /* 20130730133703_2012955139.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FAB1B83350C0049ECAD /* 20130730133703_2012955139.jpg */; };
+		EB5B0FD41B83350C0049ECAD /* same.png in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FAC1B83350C0049ECAD /* same.png */; };
+		EB5B0FD51B83350C0049ECAD /* yusa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FAD1B83350C0049ECAD /* yusa.jpg */; };
+		EB5B0FD61B83350C0049ECAD /* FUTURAM.TTF in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FAF1B83350C0049ECAD /* FUTURAM.TTF */; };
+		EB5B0FD71B83350C0049ECAD /* HGRPP2SJ.TTC in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FB01B83350C0049ECAD /* HGRPP2SJ.TTC */; };
+		EB5B0FD81B83350C0049ECAD /* Street Writers.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FB11B83350C0049ECAD /* Street Writers.ttf */; };
+		EB5B0FD91B83350C0049ECAD /* 01_0525_ゆさアプリui_トップ.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FB31B83350C0049ECAD /* 01_0525_ゆさアプリui_トップ.jpg */; };
+		EB5B0FDA1B83350C0049ECAD /* 01_0607_ゆさアプリui_トップ_シェア.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FB41B83350C0049ECAD /* 01_0607_ゆさアプリui_トップ_シェア.jpg */; };
+		EB5B0FDB1B83350C0049ECAD /* 02_0607_ゆさアプリui_アラーム.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FB51B83350C0049ECAD /* 02_0607_ゆさアプリui_アラーム.jpg */; };
+		EB5B0FDC1B83350C0049ECAD /* 03_0525_ゆさアプリui_アラーム編集2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FB61B83350C0049ECAD /* 03_0525_ゆさアプリui_アラーム編集2.jpg */; };
+		EB5B0FDD1B83350C0049ECAD /* 04_0607_ゆさアプリui_繰り返し.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FB71B83350C0049ECAD /* 04_0607_ゆさアプリui_繰り返し.jpg */; };
+		EB5B0FDE1B83350C0049ECAD /* 05_0607_ゆさアプリui_スヌーズ.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FB81B83350C0049ECAD /* 05_0607_ゆさアプリui_スヌーズ.jpg */; };
+		EB5B0FDF1B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_スタッフロール.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FB91B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_スタッフロール.jpg */; };
+		EB5B0FE01B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_プラポリ.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FBA1B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_プラポリ.jpg */; };
+		EB5B0FE11B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_利用規約.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FBB1B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_利用規約.jpg */; };
+		EB5B0FE21B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_特定商.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FBC1B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_特定商.jpg */; };
+		EB5B0FE31B83350C0049ECAD /* 06_0607_ゆさアプリui_設定.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FBD1B83350C0049ECAD /* 06_0607_ゆさアプリui_設定.jpg */; };
+		EB5B0FE41B83350C0049ECAD /* 07_0607_ゆさアプリui_YUSA.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FBE1B83350C0049ECAD /* 07_0607_ゆさアプリui_YUSA.jpg */; };
+		EB5B0FE51B83350C0049ECAD /* 08_0525_ゆさアプリui_サウンド.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FBF1B83350C0049ECAD /* 08_0525_ゆさアプリui_サウンド.jpg */; };
+		EB5B0FE61B83350C0049ECAD /* 09_0607_ゆさアプリui_アラーム画面.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FC01B83350C0049ECAD /* 09_0607_ゆさアプリui_アラーム画面.jpg */; };
+		EB5B0FE71B83350C0049ECAD /* 1_トップ.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FC21B83350C0049ECAD /* 1_トップ.jpg */; };
+		EB5B0FE81B83350C0049ECAD /* 2_アラーム.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FC31B83350C0049ECAD /* 2_アラーム.jpg */; };
+		EB5B0FE91B83350C0049ECAD /* 3_アラーム編集.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FC41B83350C0049ECAD /* 3_アラーム編集.jpg */; };
+		EB5B0FEA1B83350C0049ECAD /* 4_繰り返し.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FC51B83350C0049ECAD /* 4_繰り返し.jpg */; };
+		EB5B0FEB1B83350C0049ECAD /* 5_スヌーズ.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FC61B83350C0049ECAD /* 5_スヌーズ.jpg */; };
+		EB5B0FEC1B83350C0049ECAD /* ランディング.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5B0FC71B83350C0049ECAD /* ランディング.jpg */; };
 		EBB7A1B01B37BBF500836918 /* CVCEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB7A1AE1B37BBF500836918 /* CVCEditViewController.m */; };
 		EBB7A1B11B37BBF500836918 /* CVCEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBB7A1AF1B37BBF500836918 /* CVCEditViewController.xib */; };
 		EBB7A1B51B37DE5E00836918 /* CVCTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB7A1B31B37DE5E00836918 /* CVCTableViewCell.m */; };
@@ -54,6 +91,43 @@
 		EB1207491B3A942B00C20217 /* CVCRepeatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVCRepeatViewController.h; sourceTree = "<group>"; };
 		EB12074A1B3A942B00C20217 /* CVCRepeatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVCRepeatViewController.m; sourceTree = "<group>"; };
 		EB12074B1B3A942B00C20217 /* CVCRepeatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CVCRepeatViewController.xib; sourceTree = "<group>"; };
+		EB5B0F9F1B83350C0049ECAD /* 0525_ゆさアプリ_アイコン.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "0525_ゆさアプリ_アイコン.ai"; sourceTree = "<group>"; };
+		EB5B0FA01B83350C0049ECAD /* 0525_ゆさアプリui_アラーム編集2.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "0525_ゆさアプリui_アラーム編集2.ai"; sourceTree = "<group>"; };
+		EB5B0FA11B83350C0049ECAD /* 0527_ユサアプリ_ランディングページ.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "0527_ユサアプリ_ランディングページ.ai"; sourceTree = "<group>"; };
+		EB5B0FA21B83350C0049ECAD /* 0607_ゆさアプリui_YUSA.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "0607_ゆさアプリui_YUSA.ai"; sourceTree = "<group>"; };
+		EB5B0FA31B83350C0049ECAD /* 0607_ゆさアプリui_アラーム.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "0607_ゆさアプリui_アラーム.ai"; sourceTree = "<group>"; };
+		EB5B0FA41B83350C0049ECAD /* 0607_ゆさアプリui_アラーム画面.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "0607_ゆさアプリui_アラーム画面.ai"; sourceTree = "<group>"; };
+		EB5B0FA51B83350C0049ECAD /* 0607_ゆさアプリui_スヌーズ.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "0607_ゆさアプリui_スヌーズ.ai"; sourceTree = "<group>"; };
+		EB5B0FA61B83350C0049ECAD /* 0607_ゆさアプリui_繰り返し.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "0607_ゆさアプリui_繰り返し.ai"; sourceTree = "<group>"; };
+		EB5B0FA71B83350C0049ECAD /* 0607_ゆさアプリui_設定.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "0607_ゆさアプリui_設定.ai"; sourceTree = "<group>"; };
+		EB5B0FA81B83350C0049ECAD /* 0628_ゆさアプリui_サウンド.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "0628_ゆさアプリui_サウンド.ai"; sourceTree = "<group>"; };
+		EB5B0FA91B83350C0049ECAD /* 0628_ゆさアプリui_トップ.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "0628_ゆさアプリui_トップ.ai"; sourceTree = "<group>"; };
+		EB5B0FAB1B83350C0049ECAD /* 20130730133703_2012955139.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20130730133703_2012955139.jpg; sourceTree = "<group>"; };
+		EB5B0FAC1B83350C0049ECAD /* same.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = same.png; sourceTree = "<group>"; };
+		EB5B0FAD1B83350C0049ECAD /* yusa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yusa.jpg; sourceTree = "<group>"; };
+		EB5B0FAF1B83350C0049ECAD /* FUTURAM.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FUTURAM.TTF; sourceTree = "<group>"; };
+		EB5B0FB01B83350C0049ECAD /* HGRPP2SJ.TTC */ = {isa = PBXFileReference; lastKnownFileType = file; path = HGRPP2SJ.TTC; sourceTree = "<group>"; };
+		EB5B0FB11B83350C0049ECAD /* Street Writers.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Street Writers.ttf"; sourceTree = "<group>"; };
+		EB5B0FB31B83350C0049ECAD /* 01_0525_ゆさアプリui_トップ.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "01_0525_ゆさアプリui_トップ.jpg"; sourceTree = "<group>"; };
+		EB5B0FB41B83350C0049ECAD /* 01_0607_ゆさアプリui_トップ_シェア.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "01_0607_ゆさアプリui_トップ_シェア.jpg"; sourceTree = "<group>"; };
+		EB5B0FB51B83350C0049ECAD /* 02_0607_ゆさアプリui_アラーム.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "02_0607_ゆさアプリui_アラーム.jpg"; sourceTree = "<group>"; };
+		EB5B0FB61B83350C0049ECAD /* 03_0525_ゆさアプリui_アラーム編集2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "03_0525_ゆさアプリui_アラーム編集2.jpg"; sourceTree = "<group>"; };
+		EB5B0FB71B83350C0049ECAD /* 04_0607_ゆさアプリui_繰り返し.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "04_0607_ゆさアプリui_繰り返し.jpg"; sourceTree = "<group>"; };
+		EB5B0FB81B83350C0049ECAD /* 05_0607_ゆさアプリui_スヌーズ.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "05_0607_ゆさアプリui_スヌーズ.jpg"; sourceTree = "<group>"; };
+		EB5B0FB91B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_スタッフロール.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "06_0525_ゆさアプリui_設定_スタッフロール.jpg"; sourceTree = "<group>"; };
+		EB5B0FBA1B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_プラポリ.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "06_0525_ゆさアプリui_設定_プラポリ.jpg"; sourceTree = "<group>"; };
+		EB5B0FBB1B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_利用規約.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "06_0525_ゆさアプリui_設定_利用規約.jpg"; sourceTree = "<group>"; };
+		EB5B0FBC1B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_特定商.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "06_0525_ゆさアプリui_設定_特定商.jpg"; sourceTree = "<group>"; };
+		EB5B0FBD1B83350C0049ECAD /* 06_0607_ゆさアプリui_設定.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "06_0607_ゆさアプリui_設定.jpg"; sourceTree = "<group>"; };
+		EB5B0FBE1B83350C0049ECAD /* 07_0607_ゆさアプリui_YUSA.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "07_0607_ゆさアプリui_YUSA.jpg"; sourceTree = "<group>"; };
+		EB5B0FBF1B83350C0049ECAD /* 08_0525_ゆさアプリui_サウンド.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "08_0525_ゆさアプリui_サウンド.jpg"; sourceTree = "<group>"; };
+		EB5B0FC01B83350C0049ECAD /* 09_0607_ゆさアプリui_アラーム画面.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "09_0607_ゆさアプリui_アラーム画面.jpg"; sourceTree = "<group>"; };
+		EB5B0FC21B83350C0049ECAD /* 1_トップ.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1_トップ.jpg"; sourceTree = "<group>"; };
+		EB5B0FC31B83350C0049ECAD /* 2_アラーム.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "2_アラーム.jpg"; sourceTree = "<group>"; };
+		EB5B0FC41B83350C0049ECAD /* 3_アラーム編集.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "3_アラーム編集.jpg"; sourceTree = "<group>"; };
+		EB5B0FC51B83350C0049ECAD /* 4_繰り返し.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "4_繰り返し.jpg"; sourceTree = "<group>"; };
+		EB5B0FC61B83350C0049ECAD /* 5_スヌーズ.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "5_スヌーズ.jpg"; sourceTree = "<group>"; };
+		EB5B0FC71B83350C0049ECAD /* ランディング.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ランディング.jpg"; sourceTree = "<group>"; };
 		EBB7A1AD1B37BBF500836918 /* CVCEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVCEditViewController.h; path = ../CVCEditViewController.h; sourceTree = "<group>"; };
 		EBB7A1AE1B37BBF500836918 /* CVCEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CVCEditViewController.m; path = ../CVCEditViewController.m; sourceTree = "<group>"; };
 		EBB7A1AF1B37BBF500836918 /* CVCEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CVCEditViewController.xib; path = ../CVCEditViewController.xib; sourceTree = "<group>"; };
@@ -114,6 +188,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB5B0F9E1B83350C0049ECAD /* ai */ = {
+			isa = PBXGroup;
+			children = (
+				EB5B0F9F1B83350C0049ECAD /* 0525_ゆさアプリ_アイコン.ai */,
+				EB5B0FA01B83350C0049ECAD /* 0525_ゆさアプリui_アラーム編集2.ai */,
+				EB5B0FA11B83350C0049ECAD /* 0527_ユサアプリ_ランディングページ.ai */,
+				EB5B0FA21B83350C0049ECAD /* 0607_ゆさアプリui_YUSA.ai */,
+				EB5B0FA31B83350C0049ECAD /* 0607_ゆさアプリui_アラーム.ai */,
+				EB5B0FA41B83350C0049ECAD /* 0607_ゆさアプリui_アラーム画面.ai */,
+				EB5B0FA51B83350C0049ECAD /* 0607_ゆさアプリui_スヌーズ.ai */,
+				EB5B0FA61B83350C0049ECAD /* 0607_ゆさアプリui_繰り返し.ai */,
+				EB5B0FA71B83350C0049ECAD /* 0607_ゆさアプリui_設定.ai */,
+				EB5B0FA81B83350C0049ECAD /* 0628_ゆさアプリui_サウンド.ai */,
+				EB5B0FA91B83350C0049ECAD /* 0628_ゆさアプリui_トップ.ai */,
+				EB5B0FAA1B83350C0049ECAD /* 素材 */,
+			);
+			path = ai;
+			sourceTree = "<group>";
+		};
+		EB5B0FAA1B83350C0049ECAD /* 素材 */ = {
+			isa = PBXGroup;
+			children = (
+				EB5B0FAB1B83350C0049ECAD /* 20130730133703_2012955139.jpg */,
+				EB5B0FAC1B83350C0049ECAD /* same.png */,
+				EB5B0FAD1B83350C0049ECAD /* yusa.jpg */,
+			);
+			path = "素材";
+			sourceTree = "<group>";
+		};
+		EB5B0FAE1B83350C0049ECAD /* font */ = {
+			isa = PBXGroup;
+			children = (
+				EB5B0FAF1B83350C0049ECAD /* FUTURAM.TTF */,
+				EB5B0FB01B83350C0049ECAD /* HGRPP2SJ.TTC */,
+				EB5B0FB11B83350C0049ECAD /* Street Writers.ttf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
+		EB5B0FB21B83350C0049ECAD /* イメージサンプル */ = {
+			isa = PBXGroup;
+			children = (
+				EB5B0FB31B83350C0049ECAD /* 01_0525_ゆさアプリui_トップ.jpg */,
+				EB5B0FB41B83350C0049ECAD /* 01_0607_ゆさアプリui_トップ_シェア.jpg */,
+				EB5B0FB51B83350C0049ECAD /* 02_0607_ゆさアプリui_アラーム.jpg */,
+				EB5B0FB61B83350C0049ECAD /* 03_0525_ゆさアプリui_アラーム編集2.jpg */,
+				EB5B0FB71B83350C0049ECAD /* 04_0607_ゆさアプリui_繰り返し.jpg */,
+				EB5B0FB81B83350C0049ECAD /* 05_0607_ゆさアプリui_スヌーズ.jpg */,
+				EB5B0FB91B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_スタッフロール.jpg */,
+				EB5B0FBA1B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_プラポリ.jpg */,
+				EB5B0FBB1B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_利用規約.jpg */,
+				EB5B0FBC1B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_特定商.jpg */,
+				EB5B0FBD1B83350C0049ECAD /* 06_0607_ゆさアプリui_設定.jpg */,
+				EB5B0FBE1B83350C0049ECAD /* 07_0607_ゆさアプリui_YUSA.jpg */,
+				EB5B0FBF1B83350C0049ECAD /* 08_0525_ゆさアプリui_サウンド.jpg */,
+				EB5B0FC01B83350C0049ECAD /* 09_0607_ゆさアプリui_アラーム画面.jpg */,
+				EB5B0FC11B83350C0049ECAD /* old */,
+				EB5B0FC71B83350C0049ECAD /* ランディング.jpg */,
+			);
+			path = "イメージサンプル";
+			sourceTree = "<group>";
+		};
+		EB5B0FC11B83350C0049ECAD /* old */ = {
+			isa = PBXGroup;
+			children = (
+				EB5B0FC21B83350C0049ECAD /* 1_トップ.jpg */,
+				EB5B0FC31B83350C0049ECAD /* 2_アラーム.jpg */,
+				EB5B0FC41B83350C0049ECAD /* 3_アラーム編集.jpg */,
+				EB5B0FC51B83350C0049ECAD /* 4_繰り返し.jpg */,
+				EB5B0FC61B83350C0049ECAD /* 5_スヌーズ.jpg */,
+			);
+			path = old;
+			sourceTree = "<group>";
+		};
 		EBB7A1B71B38079400836918 /* EditDetailView */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +282,9 @@
 		EBB7A1C31B381CF200836918 /* Contents */ = {
 			isa = PBXGroup;
 			children = (
+				EB5B0F9E1B83350C0049ECAD /* ai */,
+				EB5B0FAE1B83350C0049ECAD /* font */,
+				EB5B0FB21B83350C0049ECAD /* イメージサンプル */,
 				EBB7A1C11B381CEA00836918 /* theme_song_01.mp3 */,
 			);
 			name = Contents;
@@ -312,19 +463,56 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB5B0FDD1B83350C0049ECAD /* 04_0607_ゆさアプリui_繰り返し.jpg in Resources */,
+				EB5B0FE01B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_プラポリ.jpg in Resources */,
 				EBE448151B3276C5006DF2A6 /* Main.storyboard in Resources */,
+				EB5B0FD41B83350C0049ECAD /* same.png in Resources */,
+				EB5B0FD21B83350C0049ECAD /* 0628_ゆさアプリui_トップ.ai in Resources */,
+				EB5B0FDB1B83350C0049ECAD /* 02_0607_ゆさアプリui_アラーム.jpg in Resources */,
+				EB5B0FD91B83350C0049ECAD /* 01_0525_ゆさアプリui_トップ.jpg in Resources */,
+				EB5B0FE11B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_利用規約.jpg in Resources */,
+				EB5B0FE51B83350C0049ECAD /* 08_0525_ゆさアプリui_サウンド.jpg in Resources */,
+				EB5B0FDA1B83350C0049ECAD /* 01_0607_ゆさアプリui_トップ_シェア.jpg in Resources */,
+				EB5B0FD11B83350C0049ECAD /* 0628_ゆさアプリui_サウンド.ai in Resources */,
 				EBE4481A1B3276C5006DF2A6 /* LaunchScreen.xib in Resources */,
 				EBB7A1C21B381CEA00836918 /* theme_song_01.mp3 in Resources */,
+				EB5B0FEB1B83350C0049ECAD /* 5_スヌーズ.jpg in Resources */,
 				EB12074D1B3A942B00C20217 /* CVCRepeatViewController.xib in Resources */,
+				EB5B0FC91B83350C0049ECAD /* 0525_ゆさアプリui_アラーム編集2.ai in Resources */,
+				EB5B0FCF1B83350C0049ECAD /* 0607_ゆさアプリui_繰り返し.ai in Resources */,
 				EBE448331B327754006DF2A6 /* CVCMainViewController.xib in Resources */,
+				EB5B0FEA1B83350C0049ECAD /* 4_繰り返し.jpg in Resources */,
+				EB5B0FC81B83350C0049ECAD /* 0525_ゆさアプリ_アイコン.ai in Resources */,
 				EBB7A1B61B37DE5E00836918 /* CVCTableViewCell.xib in Resources */,
 				EBB7A1B11B37BBF500836918 /* CVCEditViewController.xib in Resources */,
+				EB5B0FE41B83350C0049ECAD /* 07_0607_ゆさアプリui_YUSA.jpg in Resources */,
+				EB5B0FD81B83350C0049ECAD /* Street Writers.ttf in Resources */,
+				EB5B0FCC1B83350C0049ECAD /* 0607_ゆさアプリui_アラーム.ai in Resources */,
+				EB5B0FE91B83350C0049ECAD /* 3_アラーム編集.jpg in Resources */,
 				EBE448411B327A82006DF2A6 /* CVCViewCell.xib in Resources */,
 				EBE448171B3276C5006DF2A6 /* Images.xcassets in Resources */,
+				EB5B0FE31B83350C0049ECAD /* 06_0607_ゆさアプリui_設定.jpg in Resources */,
+				EB5B0FCE1B83350C0049ECAD /* 0607_ゆさアプリui_スヌーズ.ai in Resources */,
+				EB5B0FE81B83350C0049ECAD /* 2_アラーム.jpg in Resources */,
 				EBE448381B32794B006DF2A6 /* CVCViewController.xib in Resources */,
 				EB1207481B3A929100C20217 /* CVCSnoozeViewController.xib in Resources */,
+				EB5B0FE61B83350C0049ECAD /* 09_0607_ゆさアプリui_アラーム画面.jpg in Resources */,
+				EB5B0FCA1B83350C0049ECAD /* 0527_ユサアプリ_ランディングページ.ai in Resources */,
+				EB5B0FDC1B83350C0049ECAD /* 03_0525_ゆさアプリui_アラーム編集2.jpg in Resources */,
+				EB5B0FE21B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_特定商.jpg in Resources */,
+				EB5B0FE71B83350C0049ECAD /* 1_トップ.jpg in Resources */,
+				EB5B0FDF1B83350C0049ECAD /* 06_0525_ゆさアプリui_設定_スタッフロール.jpg in Resources */,
+				EB5B0FCD1B83350C0049ECAD /* 0607_ゆさアプリui_アラーム画面.ai in Resources */,
 				EBE448461B327AAF006DF2A6 /* CVCReusableView.xib in Resources */,
+				EB5B0FD51B83350C0049ECAD /* yusa.jpg in Resources */,
+				EB5B0FD61B83350C0049ECAD /* FUTURAM.TTF in Resources */,
+				EB5B0FD31B83350C0049ECAD /* 20130730133703_2012955139.jpg in Resources */,
+				EB5B0FEC1B83350C0049ECAD /* ランディング.jpg in Resources */,
+				EB5B0FD71B83350C0049ECAD /* HGRPP2SJ.TTC in Resources */,
+				EB5B0FD01B83350C0049ECAD /* 0607_ゆさアプリui_設定.ai in Resources */,
 				EBB7A1BC1B38182F00836918 /* CVCSoundViewController.xib in Resources */,
+				EB5B0FCB1B83350C0049ECAD /* 0607_ゆさアプリui_YUSA.ai in Resources */,
+				EB5B0FDE1B83350C0049ECAD /* 05_0607_ゆさアプリui_スヌーズ.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
