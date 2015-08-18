@@ -66,16 +66,25 @@
     NSLog(@"eventString:%@",string);
     NSLog(@"notification:%@",notification);
     if ([string isEqualToString:@"ウサボイス1"]) {
-        NSLog(@"ウサボイス1の音源を再生します。");
-            NSString *path = [[NSBundle mainBundle] pathForResource:@"theme_song_01" ofType:@"mp3"];
-            NSURL *file = [[NSURL alloc]initFileURLWithPath:path];
-            player = [[AVAudioPlayer alloc]initWithContentsOfURL:file error:nil];
-            [player prepareToPlay];
-            [player play];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"theme_song_01" ofType:@"mp3"];
+        NSURL *file = [[NSURL alloc]initFileURLWithPath:path];
+        player = [[AVAudioPlayer alloc]initWithContentsOfURL:file error:nil];
+        [player prepareToPlay];
+        [player play];
     }else if([string isEqualToString:@"ウサボイス2"]){
     }else if([string isEqualToString:@"ウサボイス3"]){
     }else if([string isEqualToString:@"ウサボイス4"]){
     }
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"わーい"
+                                                        message:notification.alertBody
+                                                       delegate:self
+                                              cancelButtonTitle:@"起きる"
+                                              otherButtonTitles: @"スヌーズ",nil];
+    [alertView show];
+    
+    
+    
+    
     // アプリ起動中(フォアグラウンド)に通知が届いた場合
     if(application.applicationState == UIApplicationStateActive) {
         // ここに処理を書く
@@ -85,23 +94,14 @@
     if(application.applicationState == UIApplicationStateInactive) {
         // ここに処理を書く
     }
-    
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"わーい"
-                                                        message:notification.alertBody
-                                                       delegate:nil
-                                              cancelButtonTitle:@"起きる"
-                                              otherButtonTitles: @"スヌーズ",nil];
-    [alertView show];
-    
     // 通知領域から削除する
     [[UIApplication sharedApplication] cancelLocalNotification:notification];
     
 }
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    
-    if (buttonIndex==1) {
-        NSLog(@"スヌーズ");
-        
+    if (buttonIndex==0) {
+        [player stop];
+    } else {
     }
 }
 @end
