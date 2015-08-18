@@ -8,8 +8,10 @@
 
 #import "AppDelegate.h"
 #import "CVCMainViewController.h"
-
-@interface AppDelegate ()
+#import <AVFoundation/AVFoundation.h>
+@interface AppDelegate (){
+    AVAudioPlayer *player;
+}
 
 @end
 
@@ -65,14 +67,14 @@
     NSLog(@"notification:%@",notification);
     if ([string isEqualToString:@"ウサボイス1"]) {
         NSLog(@"ウサボイス1の音源を再生します。");
-        //    NSString *path = [[NSBundle mainBundle] pathForResource:@"Best_Morning_Alarm" ofType:@"m4r"];
-        //    NSURL *file = [[NSURL alloc]initFileURLWithPath:path];
-        //    self.player = [[AVAudioPlayer alloc]initWithContentsOfURL:file error:nil];
-        //    [self.player prepareToPlay];
-        //    [self.player play];
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"theme_song_01" ofType:@"mp3"];
+            NSURL *file = [[NSURL alloc]initFileURLWithPath:path];
+            player = [[AVAudioPlayer alloc]initWithContentsOfURL:file error:nil];
+            [player prepareToPlay];
+            [player play];
     }else if([string isEqualToString:@"ウサボイス2"]){
-        
-    
+    }else if([string isEqualToString:@"ウサボイス3"]){
+    }else if([string isEqualToString:@"ウサボイス4"]){
     }
     // アプリ起動中(フォアグラウンド)に通知が届いた場合
     if(application.applicationState == UIApplicationStateActive) {
