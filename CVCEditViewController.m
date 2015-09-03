@@ -300,6 +300,10 @@
     notification.repeatInterval = NSWeekCalendarUnit;
     notification.timeZone = [NSTimeZone localTimeZone];
     notification.applicationIconBadgeNumber = 1;
+    NSLog(@"%@",alarmTitle);
+    if (![alarmTitle length] > 0){
+        alarmTitle = @"おはよーーー！";
+    }
     notification.alertBody = [NSString stringWithFormat:@"%@",alarmTitle];
     //通知されたときの音
     notification.soundName = @"Contents/theme_song_01.mp3";

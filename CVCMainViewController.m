@@ -29,7 +29,7 @@
                                    selector:@selector(currentTime)
                                    userInfo:nil
                                     repeats:YES];
-    
+
 }
 
 - (void)currentTime{

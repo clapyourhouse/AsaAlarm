@@ -79,7 +79,7 @@
                                                         message:notification.alertBody
                                                        delegate:self
                                               cancelButtonTitle:@"起きる"
-                                              otherButtonTitles: @"スヌーズ",nil];
+                                              otherButtonTitles:@"スヌーズ",nil];
     [alertView show];
     
     
@@ -102,6 +102,7 @@
     if (buttonIndex==0) {
         [player stop];
     } else {
+        //なにもしない。
     }
 }
 @end
